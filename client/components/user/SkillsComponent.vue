@@ -85,6 +85,8 @@ export default {
 
     showEditForm () {
       this.showEdit = !this.showEdit
+
+      this.form.skills = this.profile.skills
     },
 
     ...mapActions({
