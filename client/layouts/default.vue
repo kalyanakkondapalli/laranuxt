@@ -1,11 +1,18 @@
 <template>
-  <div class="flex items-center justify-center">
+  <main class="default-layout">
     <Nuxt />
-  </div>
+  </main>
 </template>
+<script>
+export default {
+}
+</script>
 
-<style>
+<style lang="scss">
 html,body {
-  @apply bg-gray-100
+  @apply bg-gray-100 h-full;
+}
+.default-layout {
+  @apply max-w-screen-lg mx-auto;
 }
 </style>

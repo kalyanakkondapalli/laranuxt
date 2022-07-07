@@ -9,7 +9,7 @@ export default {
   ** Nuxt target
   ** See https://nuxtjs.org/api/configuration-target
   */
-  target: 'server',
+  target: 'static',
   /*
   ** Headers of the page
   ** See https://nuxtjs.org/api/configuration-head
@@ -35,6 +35,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    '@/plugins/elementui',
   ],
   /*
   ** Auto import components
@@ -43,6 +44,10 @@ export default {
   components: [
     '@/components',
     '@/components/cards',
+    '@/components/user',
+    '@/components/projects',
+    '@/components/modal',
+    '@/components/shared',
   ],
   /*
   ** Nuxt.js dev-modules

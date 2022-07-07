@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class User extends Authenticatable
 {
@@ -17,7 +18,8 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'years_of_experience', 'contact', 'qualification', 'avatar', 'skills', 'about_me',
+        'nature',
     ];
 
     /**
@@ -36,5 +38,16 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'skills'   => 'array'
     ];
+
+    public function getAvatarAttribute($value)
+    {
+        return $value ? Storage::disk('public')->url($value) : '';
+    }
+
+    public function company(): HasMany
+    {
+        return $this->hasMany(Company::class);
+    }
 }

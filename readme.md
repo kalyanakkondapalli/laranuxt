@@ -51,6 +51,7 @@ git clone git@github.com:Rimsys/laranuxt.git; cd laranuxt; yarn; composer instal
 
 
 ### Local Environment
+* run migration and seeder `php artisan db:seed`
 * run `yarn dev` in one terminal for our nuxt dev setup
 * run `yarn api` (alias for `./artisan serve`) in another terminal for our laravel API
 
