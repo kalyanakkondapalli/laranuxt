@@ -24,7 +24,7 @@ class CompanyRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id'            => 'required|exists:users',
+            'user_id'            => 'required|exists:users,id',
             'company_name'       => 'required|max:150',
             'role'               => 'required|max:150',
             'is_current_working' => 'boolean',

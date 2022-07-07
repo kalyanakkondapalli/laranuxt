@@ -35,7 +35,7 @@
             v-model="form.end_date"
             :disabled="form.is_current_working"
             type="date"
-            placeholder="Start Date"
+            placeholder="End Date"
             :picker-options="endPickerOptions"
           />
           <FormError error-key="contact" />
@@ -51,6 +51,7 @@
 
 <script>
 import { mapGetters, mapActions } from 'vuex'
+import moment from 'moment'
 import { errorNotification, successNotification } from '@/helpers/notifications'
 export default {
   name: 'CompanyModalComponent',
@@ -104,6 +105,8 @@ export default {
     },
     async onFormSubmit () {
       this.busy = true
+      this.form.start_date = moment(this.form.start_date).format('YYYY-MM-DD')
+      this.form.end_date = moment(this.form.end_date).format('YYYY-MM-DD')
       await this.update({
         data: this.form,
         id: this.company.id,
