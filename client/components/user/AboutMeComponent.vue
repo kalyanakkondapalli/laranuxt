@@ -52,10 +52,6 @@ export default {
     ...mapGetters('messages', ['message']),
   },
 
-  created () {
-    this.form.about_me = this.profile?.about_me
-  },
-
   methods: {
     async onFormSubmit () {
       this.busy = true
@@ -76,6 +72,8 @@ export default {
 
     showEditForm () {
       this.showEdit = !this.showEdit
+
+      this.form.about_me = this.profile.about_me
     },
 
     ...mapActions({
