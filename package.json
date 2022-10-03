@@ -47,7 +47,7 @@
     "jest": "^27.0.5",
     "nuxt-storm": "^1.0.8",
     "nuxt-typed-vuex": "^0.2.0",
-    "postcss": "^8.3.5",
+    "postcss": "^8.4.17",
     "sass": "^1.53.0",
     "ts-jest": "^27.0.3",
     "vue-jest": "^3.0.4"
